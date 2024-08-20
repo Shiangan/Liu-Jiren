@@ -6,12 +6,19 @@
     font-style: normal;
 }
 
-/* 重设默认样式 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    // 背景音乐自动播放
+    const backgroundMusic = document.getElementById("background-music");
+    if (backgroundMusic) {
+        function playMusic() {
+            backgroundMusic.play().catch(error => {
+                console.warn("自动播放被阻止:", error);
+            });
+        }
+        // 自动播放
+        playMusic();
+        // 用户第一次点击页面时播放音乐
+        document.addEventListener("click", playMusic, { once: true });
+    }
 
 /* 基本样式 */
 body {
