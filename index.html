@@ -6,8 +6,8 @@
     <title>訃聞公告</title>
     <link rel="stylesheet" href="obituary.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
 <body onload="playMusic()">
@@ -15,9 +15,7 @@
         <source src="audio/千風之歌.m4a" type="audio/mp3">
         您的瀏覽器不支援音訊播放。
     </audio>
-    
-    <!-- 其他內容 -->
-    
+
     <script>
         function playMusic() {
             var music = document.getElementById("background-music");
@@ -26,8 +24,21 @@
                 console.log("自動播放被阻止：" + error);
             });
         }
+
+        $(document).ready(function(){
+            $('.slideshow-container').slick({
+                dots: true,          // 顯示導航點
+                infinite: true,      // 無限循環播放
+                speed: 500,          // 動畫速度
+                slidesToShow: 1,     // 一次顯示一個幻燈片
+                adaptiveHeight: true // 自適應高度
+            });
+
+            $('#show-flower-baskets').click(function(){
+                $('#flower-basket-gallery').toggle();
+            });
+        });
     </script>
-</body>
 
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
@@ -35,6 +46,7 @@
     </header>
 
     <main>
+        <!-- 主要照片部分 -->
         <section class="main-photo-section">
             <img id="main-photo" src="image/劉及人的主要照片.JPG" alt="追思照片">
             <p id="life-story">
@@ -43,6 +55,7 @@
             </p>
         </section>
 
+        <!-- 訃告紙本部分 -->
         <section class="paper-obituary-section">
             <h2><strong>訃告正本</strong></h2>
             <a href="image/蔡順的訃聞.JPG" data-lightbox="paper-obituary" data-title="訃聞紙本">
@@ -50,53 +63,50 @@
             </a>
         </section>
 
-            <!-- 追思与怀念部分 -->
+        <!-- 追思與緬懷部分 -->
         <section id="remembrance">
-          <h2><strong>追思緬懷</strong></h2>
-             <div class="remembrance-details">
-             <div class="remembrance-item">
-          <h3><strong>安靈</strong></h3>
-            <p><strong>台北市懷愛館 3F 蓮位堂 ［I1-06］</strong></p>
-        </div>
-        <div class="remembrance-item">
-            <h3><strong>出殯地點</strong></h3>
-            <p><strong><a href="https://maps.app.goo.gl/Gy4b5KzT3Z6YGmXB8?g_st=com.google.maps.preview.copy" target="_blank">台北市懷愛館 3F 至仁一廳</a></strong></p>
-        </div>
-        <div class="remembrance-item">
-            <h3><strong>日期</strong></h3>
-            <p><strong>中華民國2024年8月30日</strong></p>
-        </div>
-        <div class="remembrance-item">
-            <h3><strong>時間</strong></h3>
-            <p><strong>11:00 家奠禮</strong></p>
-            <p><strong>11:30 公奠禮</strong></p>
-        </div>
+            <h2><strong>追思緬懷</strong></h2>
+            <div class="remembrance-details">
+                <div class="remembrance-item">
+                    <h3><strong>安靈</strong></h3>
+                    <p><strong>台北市懷愛館 3F 蓮位堂 ［I1-06］</strong></p>
+                </div>
+                <div class="remembrance-item">
+                    <h3><strong>出殯地點</strong></h3>
+                    <p><strong><a href="https://maps.app.goo.gl/Gy4b5KzT3Z6YGmXB8?g_st=com.google.maps.preview.copy" target="_blank">台北市懷愛館 3F 至仁一廳</a></strong></p>
+                </div>
+                <div class="remembrance-item">
+                    <h3><strong>日期</strong></h3>
+                    <p><strong>中華民國2024年8月30日</strong></p>
+                </div>
+                <div class="remembrance-item">
+                    <h3><strong>時間</strong></h3>
+                    <p><strong>11:00 家奠禮</strong></p>
+                    <p><strong>11:30 公奠禮</strong></p>
+                </div>
 
-                   <!-- 加入地圖 -->
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6055113137354!2d121.55302529999999!3d25.0135172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa3b0390f463%3A0x9082f68f52193107!2z5Y-w5YyX5biC5oe35oSb6aSo!5e0!3m2!1szh-TW!2stw!4v1723546074779!5m2!1szh-TW!2stw"
-                                    width="100%" 
-                                    height="450" 
-                                    style="border:0;" 
-                                    allowfullscreen="" 
-                                    loading="lazy" 
-                                    referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
-                            </div>
-                        </div>
-                    </dd>
-                </dl>
+                <!-- 地圖嵌入 -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6055113137354!2d121.55302529999999!3d25.0135172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa3b0390f463%3A0x9082f68f52193107!2z5Y-w5YyX5biC5oe35oSb6aSo!5e0!3m2!1szh-TW!2stw!4v1723546074779!5m2!1szh-TW!2stw"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </section>
-    </div>
-        
-    <div class="remembrance-thanks">
-        <p class="fade-in-text"><strong>感謝親友們在這段時間的陪伴與支持。</strong></p>
-        <p class="fade-in-text"><strong>您的關懷和鼓勵使我們度過了這段艱難的時光。</strong></p>
-        <p class="fade-in-text"><strong>感謝您與我們一同緬懷及人先生的美好回憶。</strong></p>
-    </div>
-    
-            
+
+        <!-- 感謝信息部分 -->
+        <div class="remembrance-thanks">
+            <p class="fade-in-text"><strong>感謝親友們在這段時間的陪伴與支持。</strong></p>
+            <p class="fade-in-text"><strong>您的關懷和鼓勵使我們度過了這段艱難的時光。</strong></p>
+            <p class="fade-in-text"><strong>感謝您與我們一同緬懷及人先生的美好回憶。</strong></p>
+        </div>
+
+        <!-- 追思相片集 -->
+        <section>
             <h2><strong>追思相片集</strong></h2>
             <div class="slideshow-container">
                 <div><img src="image/IMG_5394.jpeg" alt="照片1"></div>
@@ -104,14 +114,14 @@
             </div>
         </section>
 
+        <!-- 致贈花籃部分 -->
         <section id="donate-flower">
-    <h2><strong>致贈花籃</strong></h2>
-    <p>為求會場一致性，致贈花籃請參見以下選項：</p>
-    <a href="javascript:void(0);" id="show-flower-baskets" class="btn"><strong>致贈花籃</strong></a>
-    <div id="flower-basket-gallery" style="display: none;">
-        
+            <h2><strong>致贈花籃</strong></h2>
+            <p>為求會場一致性，致贈花籃請參見以下選項：</p>
+            <a href="javascript:void(0);" id="show-flower-baskets" class="btn"><strong>致贈花籃</strong></a>
+            <div id="flower-basket-gallery" style="display: none;">
                 <div class="flower-basket-item"> 
-            <img src="image/花籃A.JPG" alt="花籃A">
+                    <img src="image/花籃A.JPG" alt="花籃A">
                     <p class="price"><strong>A款NT$2,500/1對</strong></p>
                 </div>
                 <div class="flower-basket-item">
@@ -148,23 +158,25 @@
         </section>
     </main>
 
+    <!-- 固定聯絡方式 -->
     <div id="fixed-links">
-    <a href="tel:0978583699" class="fixed-link"><span> 📞 </span> 24H </a>
-    <a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank" class="fixed-link"><span>Line</span> Line</a>
-</div>
-
+        <a href="tel:0978583699" class="fixed-link"><span> 📞 </span> 24H </a>
+        <a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank" class="fixed-link"><span>Line</span> Line</a>
+    </div>
 
     <!-- 名片及分享按钮部分 -->
-<section id="business-card">
-    <img src="image/名片頁.jpg" alt="名片" class="business-card-img">
-    <div id="share-buttons">
-        <p><strong>分享此頁面：</strong></p>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=[https://shiangan.github.io/Liu-Jiren/]" target="_blank" class="share-btn fb-share-btn">Facebook</a>
-        <a href="https://line.me/R/msg/text/?[https://shiangan.github.io/Liu-Jiren/]" target="_blank" class="share-btn line-share-btn">Line</a>
-    </div>
-</section>
-    
+    <section id="business-card">
+        <img src="image/名片頁.jpg" alt="名片" class="business-card-img">
+        <div id="share-buttons">
+            <p><strong>分享此頁面：</strong></p>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=[https://shiangan.github.io/Liu-Jiren/]" target="_blank" class="share-btn fb-share-btn">Facebook</a>
+            <a href="https://line.me/R/msg/text/?[https://shiangan.github.io/Liu-Jiren/]" target="_blank" class="share-btn line-share-btn">Line</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
     <footer>
         <p>© 2024 劉及人訃聞公告 | 由<span class="footer-signature">祥安生命有限公司 陳妍如</span> | <a href="privacy-policy.html" class="bold">版權所有</a></p>
     </footer>
+</body>
 </html>
