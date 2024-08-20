@@ -22,18 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-/* 渐显动画效果 */
-.fade-in-text {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.map-container {
-    margin-top: 30px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-}
 
     const fadeInTexts = document.querySelectorAll('.fade-in-text');
     
@@ -60,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     showSlides();
 
+ document.addEventListener('DOMContentLoaded', function() {
     // 花篮展示功能
     const flowerBasketsButton = document.getElementById('show-flower-baskets');
     const flowerBasketGallery = document.getElementById('flower-basket-gallery');
@@ -70,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
             flowerBasketGallery.scrollIntoView({ behavior: 'smooth' });
         });
     }
+});
 
     // 初始化动画
     animateTimeline();
