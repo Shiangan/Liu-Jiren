@@ -132,6 +132,16 @@
         </section>
     </main>
 
+    <!-- 名片及分享按钮部分 -->
+<section id="business-card">
+    <img src="image/名片頁.jpg" alt="名片" class="business-card-img">
+    <div id="share-buttons">
+        <p><strong>分享此頁面：</strong></p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=[PAGE_URL]" target="_blank" class="share-btn fb-share-btn">Facebook</a>
+        <a href="https://line.me/R/msg/text/?[PAGE_URL]" target="_blank" class="share-btn line-share-btn">Line</a>
+    </div>
+</section>
+    
     <footer>
         <p>© 2024 劉及人訃聞公告 | 由<span class="footer-signature">祥安生命有限公司</span> | <a href="privacy-policy.html" class="bold">版權所有</a></p>
     </footer>
@@ -143,6 +153,12 @@
                 console.log("音樂播放失敗:", error);
             });
         }
+
+        <!-- 右下角固定按钮 -->
+<div id="fixed-links">
+    <a href="tel:0978583699" class="fixed-link"><span>📞</span> 电话</a>
+    <a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank" class="fixed-link"><span>Line</span> Line</a>
+</div>
 
         document.getElementById('show-flower-baskets').addEventListener('click', function() {
             const gallery = document.getElementById('flower-basket-gallery');
