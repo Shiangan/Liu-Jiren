@@ -10,36 +10,24 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
-<body onload="playMusic()">
-    <audio id="background-music" loop muted>
-        <source src="audio/千風之歌.m4a" type="audio/mp3">
+
+ <body>
+    <audio id="background-music" loop autoplay>
+        <source src="audio/千風之歌.m4a" type="audio/mp4">
         您的瀏覽器不支援音訊播放。
     </audio>
+</body>
 
     <script>
-        function playMusic() {
-            var music = document.getElementById("background-music");
-            music.muted = false; // 取消靜音
-            music.play().catch(function(error) {
-                console.log("自動播放被阻止：" + error);
-            });
-        }
-
-        $(document).ready(function(){
-            $('.slideshow-container').slick({
-                dots: true,          // 顯示導航點
-                infinite: true,      // 無限循環播放
-                speed: 500,          // 動畫速度
-                slidesToShow: 1,     // 一次顯示一個幻燈片
-                adaptiveHeight: true // 自適應高度
-            });
-
-            $('#show-flower-baskets').click(function(){
-                $('#flower-basket-gallery').toggle();
-            });
+    function playMusic() {
+        var music = document.getElementById("background-music");
+        music.muted = false; // 取消静音
+        music.play().catch(function(error) {
+            console.log("自动播放被阻止：" + error);
         });
+    }
     </script>
-
+    
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
         <h1>劉及人先生 訃告</h1>
@@ -186,15 +174,6 @@
 <footer>
   <p>承辦禮儀公司 祥安生命有限公司 ｜ 禮儀師：陳妍如</p>
   <p>© 2024 劉及人訃聞公告 | <span class="footer-signature"> 祥安生命有限公司</span>版權所有 |
-      
-      <a href="tel:0978583699" class="bold">
-        <img src="image/24小時專線.png" alt="24小時服務電話" style="width: 70px; height: 30px;">
-      </a>
-      
-      <a href="https://line.me/R/ti/p/%40yourlineid" target="_blank" class="bold">
-       <img src="image/IMG_4177.webp" alt="LINE 聯絡我們" style="width: 50px; height: 50px;">
-      </a>
-  </p>
 </footer>
     
 </body>
