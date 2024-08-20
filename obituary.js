@@ -1,3 +1,4 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 document.addEventListener('DOMContentLoaded', function() {
     // Timeline animation
     function animateTimeline() {
@@ -11,6 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+
+    $(document).ready(function(){
+        $('.slideshow-container').slick({
+            dots: true,         // 显示导航点
+            infinite: true,     // 无限循环播放
+            speed: 500,         // 动画速度
+            slidesToShow: 1,    // 一次显示一个幻灯片
+            adaptiveHeight: true // 自适应高度
+        });
+    });
 
     window.onload = function() {
         const audio = document.getElementById('background-music');
