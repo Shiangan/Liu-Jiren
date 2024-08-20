@@ -1,6 +1,9 @@
+// 确保jQuery加载
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Timeline animation
+
+    // 时间轴动画
     function animateTimeline() {
         const timelineBlocks = document.querySelectorAll(".VivaTimeline .event");
         timelineBlocks.forEach(function (block) {
@@ -13,17 +16,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // 初始化花篮展示功能
+    const flowerBasketButton = document.getElementById("show-flower-baskets");
+    const flowerBasketGallery = document.getElementById("flower-basket-gallery");
 
+    if (flowerBasketButton && flowerBasketGallery) {
+        flowerBasketButton.addEventListener("click", function() {
+            if (flowerBasketGallery.style.display === "none" || flowerBasketGallery.style.display === "") {
+                flowerBasketGallery.style.display = "block";
+            } else {
+                flowerBasketGallery.style.display = "none";
+            }
+        });
+    }
+
+    // 初始化幻灯片
     $(document).ready(function(){
         $('.slideshow-container').slick({
-            dots: true,         // 显示导航点
-            infinite: true,     // 无限循环播放
-            speed: 500,         // 动画速度
-            slidesToShow: 1,    // 一次显示一个幻灯片
+            dots: true,          // 显示导航点
+            infinite: true,      // 无限循环播放
+            speed: 500,          // 动画速度
+            slidesToShow: 1,     // 一次显示一个幻灯片
             adaptiveHeight: true // 自适应高度
         });
     });
 
+    // 音乐自动播放
     window.onload = function() {
         const audio = document.getElementById('background-music');
         if (audio) {
@@ -33,59 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     };
-    
 
+    // 渐显文本效果
     const fadeInTexts = document.querySelectorAll('.fade-in-text');
-    
     fadeInTexts.forEach((text, index) => {
         setTimeout(() => {
             text.style.opacity = '1';
         }, index * 1500); // 每个段落延迟1.5秒逐个渐显
     });
-});
 
-var flowerBasketButton = document.getElementById("show-flower-baskets");
-        var flowerBasketGallery = document.getElementById("flower-basket-gallery");
-
-        flowerBasketButton.addEventListener("click", function() {
-            if (flowerBasketGallery.style.display === "none") {
-                flowerBasketGallery.style.display = "block";
-            } else {
-                flowerBasketGallery.style.display = "none";
-            }
-        });
-    });
-
-    // 幻灯片功能
-    let slideIndex = 0;
-    function showSlides() {
-        const slides = document.getElementsByClassName("mySlides");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 4000); // 每4秒更换幻灯片
-    }
-    showSlides();
-
- 
-    // 花篮展示功能
-    const flowerBasketsButton = document.getElementById('show-flower-baskets');
-    const flowerBasketGallery = document.getElementById('flower-basket-gallery');
-
-    if (flowerBasketsButton && flowerBasketGallery) {
-        flowerBasketsButton.addEventListener('click', function() {
-            flowerBasketGallery.style.display = 'flex';
-            flowerBasketGallery.scrollIntoView({ behavior: 'smooth' });
-        });
-    }
-});
-
-    // 初始化动画
+    // 初始化动画并监听滚动事件
     animateTimeline();
     window.addEventListener('scroll', animateTimeline);
 });
