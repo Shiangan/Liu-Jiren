@@ -32,6 +32,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+var flowerBasketButton = document.getElementById("show-flower-baskets");
+        var flowerBasketGallery = document.getElementById("flower-basket-gallery");
+
+        flowerBasketButton.addEventListener("click", function() {
+            if (flowerBasketGallery.style.display === "none") {
+                flowerBasketGallery.style.display = "block";
+            } else {
+                flowerBasketGallery.style.display = "none";
+            }
+        });
+    });
+
     // 幻灯片功能
     let slideIndex = 0;
     function showSlides() {
@@ -48,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     showSlides();
 
- document.addEventListener('DOMContentLoaded', function() {
+ 
     // 花篮展示功能
     const flowerBasketsButton = document.getElementById('show-flower-baskets');
     const flowerBasketGallery = document.getElementById('flower-basket-gallery');
