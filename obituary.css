@@ -159,10 +159,10 @@
 
     .remembrance-thanks {
         margin-top: 20px;
-        font-family: 'Merriweather', serif;
-        font-size: 18px;
+        font-family: '清松手写体5.ttf', serif;
+        font-size: 15px;
         color: #5A5A5A;
-        line-height: 1.8;
+        line-height: 1.3;
     }
 
     /* 页眉设计 */
@@ -310,7 +310,7 @@
         top: 0;
         font-size: 16px;
         font-weight: bold;
-    color: #2C2C2C;
+        color: #2C2C2C;
 }
 
 .VivaTimeline .events-header {
