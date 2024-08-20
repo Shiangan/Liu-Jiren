@@ -477,34 +477,19 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
-/* 分享按钮样式 */
-#share-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
+  #share-buttons {
+    text-align: center; /* 或者其他对齐方式 */
+  }
 
-.share-btn {
+  .share-btn {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
+    margin: 5px; /* 调整按钮之间的间距 */
+  }
 
-.fb-share-btn {
-    background-color: #3b5998;
-}
-
-.line-share-btn {
-    background-color: #00c300;
-}
-
-.share-btn:hover {
-    opacity: 0.8;
-}
+  .share-btn img {
+    width: 40px; /* 调整图片的宽度 */
+    height: auto; /* 保持图片的宽高比 */
+  }
 
 /* 固定在右下角的电话和 Line 链接 */
 #fixed-links {
