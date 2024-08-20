@@ -85,7 +85,9 @@
     <p>為求會場一致性，致贈花籃請參見以下選項：</p>
     <a href="javascript:void(0);" id="show-flower-baskets" class="btn"><strong>致贈花籃</strong></a>
     <div id="flower-basket-gallery" style="display: none;">
-        <div class="flower-basket-item">                 <img src="image/花籃A.JPG" alt="花籃A">
+        
+                <div class="flower-basket-item"> 
+            <img src="image/花籃A.JPG" alt="花籃A">
                     <p class="price"><strong>A款NT$2,500/1對</strong></p>
                 </div>
                 <div class="flower-basket-item">
@@ -117,10 +119,16 @@
                     <p class="price"><strong>H款NT$6,500/1對</strong></p>
                 </div>
             </div>
-            <p><a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank"><strong>送上一份最深切的祝福</strong></a></p>
+            <p><a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank"><strong>送上一份最深切的祝福</strong></a></p>
             <p>為求會場一致，統一製作花籃<br>訂購花籃請點選<a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank"><strong>這裡</strong></a>。</p>
         </section>
     </main>
+
+    <div id="fixed-links">
+    <a href="tel:0978583699" class="fixed-link"><span>📞</span> 电话</a>
+    <a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank" class="fixed-link"><span>Line</span> Line</a>
+</div>
+
 
     <!-- 名片及分享按钮部分 -->
 <section id="business-card">
@@ -135,41 +143,4 @@
     <footer>
         <p>© 2024 劉及人訃聞公告 | 由<span class="footer-signature">祥安生命有限公司</span> | <a href="privacy-policy.html" class="bold">版權所有</a></p>
     </footer>
-
-    <script>
-        function playMusic() {
-            const audio = document.getElementById('background-music');
-            audio.play().catch(error => {
-                console.log("音樂播放失敗:", error);
-            });
-        }
-
-        <!-- 右下角固定按钮 -->
-<div id="fixed-links">
-    <a href="tel:0978583699" class="fixed-link"><span>📞</span> 电话</a>
-    <a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank" class="fixed-link"><span>Line</span> Line</a>
-</div>
-
-        document.getElementById('show-flower-baskets').addEventListener('click', function() {
-            const gallery = document.getElementById('flower-basket-gallery');
-            gallery.style.display = gallery.style.display === 'none' ? 'block' : 'none';
-        });
-
-        // 幻灯片功能
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.slideshow-container > div');
-            let slideIndex = 0;
-
-            function showSlides() {
-                slides.forEach((slide, index) => {
-                    slide.style.display = index === slideIndex ? 'block' : 'none';
-                });
-                slideIndex = (slideIndex + 1) % slides.length;
-                setTimeout(showSlides, 4000); // 每4秒更换幻灯片
-            }
-
-            showSlides();
-        });
-    </script>
-</body>
 </html>
