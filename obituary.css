@@ -101,69 +101,78 @@
     }
 
     /* 追思与怀念部分样式 */
-    #remembrance {
-        text-align: center;
-        margin: 40px 0;
-        padding: 20px;
-        background-color: #FFF;
-        border-radius: 10px;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    }
+   /* 容器样式 */
+#remembrance {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #FFFFFF; /* 使用完整的颜色代码 */
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
 
-    #remembrance h2 {
-        font-family: 'Lora', serif;
-        font-size: 26px;
-        color: #2C2C2C;
-        margin-bottom: 20px;
-    }
+/* 标题样式 */
+#remembrance h2 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    color: #2C2C2C;
+    margin-bottom: 20px;
+}
 
-    .remembrance-details {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        margin-bottom: 20px;
-    }
+/* 内容项容器样式 */
+.remembrance-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
 
-    .remembrance-item {
-        flex: 1 1 300px;
-        background-color: #FAF9F7;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
-    }
+/* 内容项样式 */
+.remembrance-item {
+    flex: 1 1 300px;
+    background-color: #FAF9F7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+}
 
-    .remembrance-item h3 {
-        font-family: 'Merriweather', serif;
-        font-size: 22px;
-        color: #6A6A6A;
-        margin-bottom: 10px;
-    }
+/* 内容项标题样式 */
+.remembrance-item h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    color: #6A6A6A;
+    margin-bottom: 10px;
+}
 
-    .remembrance-item p {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 18px;
-        color: #5A5A5A;
-        line-height: 1.6;
-    }
+/* 内容项正文样式 */
+.remembrance-item p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    color: #5A5A5A;
+    line-height: 1.6;
+}
 
-    .remembrance-item a {
-        color: #2C2C2C;
-        text-decoration: underline;
-        transition: color 0.3s ease;
-    }
+/* 链接样式 */
+.remembrance-item a {
+    color: #2C2C2C;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
 
-    .remembrance-item a:hover {
-        color: #8B4513;
-    }
+/* 链接悬停样式 */
+.remembrance-item a:hover {
+    color: #8B4513;
+}
 
-    .remembrance-thanks {
-        margin-top: 20px;
-        font-family: '清松手写体5.ttf', serif;
-        font-size: 15px;
-        color: #5A5A5A;
-        line-height: 1.3;
-    }
+/* 感谢部分样式 */
+.remembrance-thanks {
+    margin-top: 20px;
+    font-family: '清松手写体5', serif; /* 确保字体文件正确加载 */
+    font-size: 15px;
+    color: #5A5A5A;
+    line-height: 1.3;
+}
 
     /* 页眉设计 */
     header {
@@ -424,37 +433,34 @@
 }
 
 /* 页脚部分的样式 */
-footer {
-    background-color: #f0f0f0; /* 页脚背景颜色 */
-    padding: 20px; /* 页脚的内边距 */
-    text-align: center; /* 文本居中对齐 */
-    font-family: '清松手写体5.ttf', 'Merriweather', serif; /* 使用手写字体和备用字体 */
-    font-size: 14px; /* 字体大小 */
-    color: #5A5A5A; /* 字体颜色 */
-    border-top: 2px solid #8B4513; /* 页脚顶部的分割线 */
-}
+  footer {
+    background-color: #f4f4f4; /* 背景颜色 */
+    padding: 20px; /* 内边距 */
+    text-align: center; /* 文本居中 */
+    font-family: 清松手写体5, Arial, sans-serif; /* 字体 */
+  }
 
-footer p {
-    margin: 0; /* 移除段落的默认外边距 */
-}
+  footer p {
+    margin: 5px 0; /* 上下外边距 */
+    color: #333; /* 文字颜色 */
+  }
 
-footer a {
-    color: #8B4513; /* 链接颜色 */
-    text-decoration: none; /* 去除链接下划线 */
-    transition: color 0.3s ease; /* 链接颜色的渐变效果 */
-}
+  .footer-signature {
+    font-weight: bold; /* 字体加粗 */
+  }
 
-footer a:hover {
-    color: #A0522D; /* 鼠标悬停时的链接颜色 */
-}
+  .bold {
+    font-weight: bold; /* 字体加粗 */
+    text-decoration: none; /* 去掉链接下划线 */
+  }
 
-/* 页脚签名的特殊样式 */
-.footer-signature {
-    font-family: 'CustomFont', 'Merriweather', serif; /* 使用自定义字体 */
-    font-size: 16px; /* 字体大小 */
-    color: #8B4513; /* 字体颜色 */
-}
+  footer img {
+    vertical-align: middle; /* 图标垂直对齐 */
+  }
 
+  footer a {
+    margin: 0 10px; /* 图标间距 */
+  }
 /* 响应式设计：在小屏幕上的页脚样式 */
 @media (max-width: 768px) {
     footer {
