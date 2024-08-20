@@ -168,7 +168,7 @@
 /* 感谢部分样式 */
 .remembrance-thanks {
     margin-top: 20px;
-    font-family: '清松手写体5', serif; /* 确保字体文件正确加载 */
+    font-family: '清松手写体5.ttf', serif; /* 确保字体文件正确加载 */
     font-size: 15px;
     color: #5A5A5A;
     line-height: 1.3;
@@ -437,7 +437,7 @@
     background-color: #f4f4f4; /* 背景颜色 */
     padding: 20px; /* 内边距 */
     text-align: center; /* 文本居中 */
-    font-family: 清松手写体5, Arial, sans-serif; /* 字体 */
+    font-family: '清松手写体5.ttf', Arial, sans-serif; /* 字体 */
   }
 
   footer p {
