@@ -30,16 +30,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 初始化幻灯片
-    $(document).ready(function(){
-        $('.slideshow-container').slick({
-            dots: true,          // 显示导航点
-            infinite: true,      // 无限循环播放
-            speed: 500,          // 动画速度
-            slidesToShow: 1,     // 一次显示一个幻灯片
-            adaptiveHeight: true // 自适应高度
-        });
-    });
+<!-- JavaScript for slideshow -->
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        const slides = document.querySelectorAll("#slideshow img");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+</script>
 
     // 音乐自动播放
     window.onload = function() {
