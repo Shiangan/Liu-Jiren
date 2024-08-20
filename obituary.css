@@ -1,331 +1,315 @@
-/* 字体引入 */
-@font-face {
-    font-family: 'CustomFont';
-    src: url('清松手写体5.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-    // 背景音乐自动播放
-    const backgroundMusic = document.getElementById("background-music");
-    if (backgroundMusic) {
-        function playMusic() {
-            backgroundMusic.play().catch(error => {
-                console.warn("自动播放被阻止:", error);
-            });
-        }
-        // 自动播放
-        playMusic();
-        // 用户第一次点击页面时播放音乐
-        document.addEventListener("click", playMusic, { once: true });
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>追思页面</title>
+    
+    <!-- 字体引入 -->
+    <style>
+    @font-face {
+        font-family: 'CustomFont';
+        src: url('清松手写体5.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap; /* 优化字体加载性能 */
     }
 
-/* 基本样式 */
-body {
-    font-family: 'CustomFont', Arial, Helvetica, sans-serif; /* 使用自定义字体，并添加备选方案 */
-    color: #2C2C2C;
-    background-color: #FAF9F7;
-    line-height: 1.8;
-}
+    /* 基本样式 */
+    body {
+        font-family: 'CustomFont', Arial, Helvetica, sans-serif;
+        color: #2C2C2C;
+        background-color: #FAF9F7;
+        line-height: 1.8;
+        margin: 0;
+        padding: 0;
+    }
 
+    /* 背景音乐自动播放 */
+    audio {
+        display: none;
+    }
 
-/* 追思相片集设计 */
-#slideshow {
-    max-width: 100%;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    background-color: #f1f1f1;
-}
-
-.slideshow-container {
-    position: relative;
-    max-width: 800px; /* 设置最大宽度 */
-    margin: auto;
-    overflow: hidden;
-}
-
-.slideshow-container img {
-    width: 100%; /* 确保图片填满容器 */
-    height: auto; /* 高度自动调整 */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* 幻灯片导航按钮 */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: background-color 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* 响应式设计：调整屏幕较小的设备上的相片集 */
-@media (max-width: 768px) {
-    .slideshow-container {
+    /* 追思相片集设计 */
+    #slideshow {
         max-width: 100%;
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+        background-color: #f1f1f1;
     }
-}
 
-/* 追思与怀念部分样式 */
-#remembrance {
-    text-align: center;
-    margin: 40px 0;
-    padding: 20px;
-    background-color: #FFF;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
+    .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+    }
 
-#remembrance h2 {
-    font-family: 'Lora', serif;
-    font-size: 26px;
-    color: #2C2C2C;
-    margin-bottom: 20px;
-}
+    .slideshow-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+    }
 
-.remembrance-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
+    /* 幻灯片导航按钮 */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: background-color 0.6s ease;
+        border-radius: 3px;
+        user-select: none;
+    }
 
-.remembrance-item {
-    flex: 1 1 300px;
-    background-color: #FAF9F7;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
-}
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
 
-.remembrance-item h3 {
-    font-family: 'Merriweather', serif;
-    font-size: 22px;
-    color: #6A6A6A;
-    margin-bottom: 10px;
-}
+    .prev {
+        left: 0;
+        border-radius: 0 3px 3px 0;
+    }
 
-.remembrance-item p {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
-    color: #5A5A5A;
-    line-height: 1.6;
-}
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 
-.remembrance-item a {
-    color: #2C2C2C;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
+    /* 渐显动画效果 */
+    .fade {
+        animation: fade 1.5s ease-in-out;
+    }
 
-.remembrance-item a:hover {
-    color: #8B4513;
-}
+    @keyframes fade {
+        from { opacity: 0.4; }
+        to { opacity: 1; }
+    }
 
-.remembrance-thanks {
-    margin-top: 20px;
-    font-family: 'Merriweather', serif;
-    font-size: 18px;
-    color: #5A5A5A;
-    line-height: 1.8;
-}
+    /* 响应式设计：调整屏幕较小的设备上的相片集 */
+    @media (max-width: 768px) {
+        .slideshow-container {
+            max-width: 100%;
+        }
+    }
 
-/* 渐显动画效果 */
-.fade-in-text {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
+    /* 追思与怀念部分样式 */
+    #remembrance {
+        text-align: center;
+        margin: 40px 0;
+        padding: 20px;
+        background-color: #FFF;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
 
-.map-container {
-    margin-top: 30px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-}
+    #remembrance h2 {
+        font-family: 'Lora', serif;
+        font-size: 26px;
+        color: #2C2C2C;
+        margin-bottom: 20px;
+    }
 
-/* 页眉设计 */
-header {
-    text-align: center;
-    background-color: #FFF;
-    padding: 20px 0;
-    border-bottom: 1px solid #EDEDED;
-}
+    .remembrance-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
 
-header .logo {
-    max-width: 60px; /* 缩小Logo */
-    margin-bottom: 15px;
-}
+    .remembrance-item {
+        flex: 1 1 300px;
+        background-color: #FAF9F7;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    }
 
-header h1 {
-    font-size: 24px;
-    color: #2C2C2C;
-    margin: 0;
-}
+    .remembrance-item h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 22px;
+        color: #6A6A6A;
+        margin-bottom: 10px;
+    }
 
-/* 主要内容设计 */
-main {
-    padding: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #FFF;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
+    .remembrance-item p {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 18px;
+        color: #5A5A5A;
+        line-height: 1.6;
+    }
 
-/* 图片区域设计 */
-.main-photo-section {
-    text-align: center;
-    margin-bottom: 20px;
-}
+    .remembrance-item a {
+        color: #2C2C2C;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
 
-.main-photo-section img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
+    .remembrance-item a:hover {
+        color: #8B4513;
+    }
 
-.main-photo-section img:hover {
-    transform: scale(1.05);
-}
+    .remembrance-thanks {
+        margin-top: 20px;
+        font-family: 'Merriweather', serif;
+        font-size: 18px;
+        color: #5A5A5A;
+        line-height: 1.8;
+    }
 
-.main-photo-section p {
-    font-family: 'Merriweather', serif;
-    font-size: 18px;
-    color: #5A5A5A;
-    margin-top: 15px;
-    padding: 0 10px;
-    text-align: justify;
-}
+    /* 页眉设计 */
+    header {
+        text-align: center;
+        background-color: #FFF;
+        padding: 20px 0;
+        border-bottom: 1px solid #EDEDED;
+    }
 
-/* 标语区域 */
-.motto {
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    color: #6A6A6A;
-    margin: 40px 0;
-    font-style: italic;
-}
+    header .logo {
+        max-width: 60px; /* 缩小Logo */
+        margin-bottom: 15px;
+    }
 
-/* 讣闻区域设计 */
-.paper-obituary-section {
-    text-align: center;
-    margin-bottom: 20px;
-}
+    header h1 {
+        font-size: 24px;
+        color: #2C2C2C;
+        margin: 0;
+    }
 
-.paper-obituary-section h2 {
-    font-size: 24px;
-    font-family: 'Lora', serif;
-    color: #2C2C2C;
-    margin-bottom: 15px;
-}
+    /* 主要内容设计 */
+    main {
+        padding: 20px;
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #FFF;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
 
-.paper-obituary-section img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
+    /* 图片区域设计 */
+    .main-photo-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-.paper-obituary-section img:hover {
-    transform: scale(1.05);
-}
+    .main-photo-section img {
+        width: 100%;
+        max-width: 350px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
 
-/* 花籃区域设计 */
-.paper-obituary-section img {
-    width: 100%; /* 确保图片填满容器 */
-    max-width: 350px; /* 设置最大宽度 */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
+    .main-photo-section img:hover {
+        transform: scale(1.05);
+    }
 
-.paper-obituary-section img:hover {
-    transform: scale(1.05);
-}
+    .main-photo-section p {
+        font-family: 'Merriweather', serif;
+        font-size: 18px;
+        color: #5A5A5A;
+        margin-top: 15px;
+        padding: 0 10px;
+        text-align: justify;
+    }
 
-/* 时间轴设计 */
-#timeline {
-    margin-top: 50px;
-}
+    /* 标语区域 */
+    .motto {
+        text-align: center;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 22px;
+        color: #6A6A6A;
+        margin: 40px 0;
+        font-style: italic;
+    }
 
-#timeline h2 {
-    text-align: center;
-    font-family: 'Lora', serif;
-    font-size: 26px;
-    color: #2C2C2C;
-    margin-bottom: 20px;
-}
+    /* 讣闻区域设计 */
+    .paper-obituary-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-.VivaTimeline dl {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding-left: 30px;
-}
+    .paper-obituary-section h2 {
+        font-size: 24px;
+        font-family: 'Lora', serif;
+        color: #2C2C2C;
+        margin-bottom: 15px;
+    }
 
-.VivaTimeline dt,
-.VivaTimeline dd {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    margin-left: 50px;
-    padding-bottom: 25px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
-}
+    .paper-obituary-section img {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
 
-.VivaTimeline dt {
-    font-weight: bold;
-    color: #2C2C2C;
-}
+    .paper-obituary-section img:hover {
+        transform: scale(1.05);
+    }
 
-.VivaTimeline dd .circ {
-    position: absolute;
-    left: -50px;
-    top: 12px;
-    width: 14px;
-    height: 14px;
-    background-color: #2C2C2C;
-    border-radius: 50%;
-}
+    /* 时间轴设计 */
+    #timeline {
+        margin-top: 50px;
+    }
 
-.VivaTimeline dd .time {
-    position: absolute;
-    left: -75px;
-    top: 0;
-    font-size: 16px;
-    font-weight: bold;
+    #timeline h2 {
+        text-align: center;
+        font-family: 'Lora', serif;
+        font-size: 26px;
+        color: #2C2C2C;
+        margin-bottom: 20px;
+    }
+
+    .VivaTimeline dl {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-left: 30px;
+    }
+
+    .VivaTimeline dt,
+    .VivaTimeline dd {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        margin-left: 50px;
+        padding-bottom: 25px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 18px;
+    }
+
+    .VivaTimeline dt {
+        font-weight: bold;
+        color: #2C2C2C;
+    }
+
+    .VivaTimeline dd .circ {
+        position: absolute;
+        left: -50px;
+        top: 12px;
+        width: 14px;
+        height: 14px;
+        background-color: #2C2C2C;
+        border-radius: 50%;
+    }
+
+    .VivaTimeline dd .time {
+        position: absolute;
+        left: -75px;
+        top: 0;
+        font-size: 16px;
+        font-weight: bold;
     color: #2C2C2C;
 }
 
