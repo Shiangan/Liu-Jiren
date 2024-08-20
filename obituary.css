@@ -428,7 +428,7 @@ footer {
     background-color: #f0f0f0; /* 页脚背景颜色 */
     padding: 20px; /* 页脚的内边距 */
     text-align: center; /* 文本居中对齐 */
-    font-family: 'CustomFont', 'Merriweather', serif; /* 使用手写字体和备用字体 */
+    font-family: '清松手写体5.ttf', 'Merriweather', serif; /* 使用手写字体和备用字体 */
     font-size: 14px; /* 字体大小 */
     color: #5A5A5A; /* 字体颜色 */
     border-top: 2px solid #8B4513; /* 页脚顶部的分割线 */
