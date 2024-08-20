@@ -10,11 +10,23 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
 <body onload="playMusic()">
-    <!-- 背景音樂 -->
-    <audio id="background-music" loop>
+    <audio id="background-music" loop muted>
         <source src="audio/千風之歌.m4a" type="audio/mp3">
         您的瀏覽器不支援音訊播放。
     </audio>
+    
+    <!-- 其他內容 -->
+    
+    <script>
+        function playMusic() {
+            var music = document.getElementById("background-music");
+            music.muted = false; // 取消靜音
+            music.play().catch(function(error) {
+                console.log("自動播放被阻止：" + error);
+            });
+        }
+    </script>
+</body>
 
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
