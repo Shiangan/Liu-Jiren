@@ -1,0 +1,394 @@
+/* 字体引入 */
+@font-face {
+    font-family: 'CustomFont';
+    src: url('清松手写体5.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 重设默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基本样式 */
+body {
+    font-family: 'CustomFont', Arial, Helvetica, sans-serif; /* 使用自定义字体，并添加备选方案 */
+    color: #2C2C2C;
+    background-color: #FAF9F7;
+    line-height: 1.8;
+}
+
+
+/* 追思相片集设计 */
+#slideshow {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 800px; /* 设置最大宽度 */
+    margin: auto;
+    overflow: hidden;
+}
+
+.slideshow-container img {
+    width: 100%; /* 确保图片填满容器 */
+    height: auto; /* 高度自动调整 */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 幻灯片导航按钮 */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 响应式设计：调整屏幕较小的设备上的相片集 */
+@media (max-width: 768px) {
+    .slideshow-container {
+        max-width: 100%;
+    }
+}
+/* 页眉设计 */
+header {
+    text-align: center;
+    background-color: #FFF;
+    padding: 20px 0;
+    border-bottom: 1px solid #EDEDED;
+}
+
+header .logo {
+    max-width: 60px; /* 缩小Logo */
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #2C2C2C;
+    margin: 0;
+}
+
+/* 主要内容设计 */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 图片区域设计 */
+.main-photo-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-photo-section img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.main-photo-section img:hover {
+    transform: scale(1.05);
+}
+
+.main-photo-section p {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    color: #5A5A5A;
+    margin-top: 15px;
+    padding: 0 10px;
+    text-align: justify;
+}
+
+/* 标语区域 */
+.motto {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: #6A6A6A;
+    margin: 40px 0;
+    font-style: italic;
+}
+
+/* 讣闻区域设计 */
+.paper-obituary-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.paper-obituary-section h2 {
+    font-size: 24px;
+    font-family: 'Lora', serif;
+    color: #2C2C2C;
+    margin-bottom: 15px;
+}
+
+.paper-obituary-section img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.paper-obituary-section img:hover {
+    transform: scale(1.05);
+}
+
+/* 花籃区域设计 */
+.paper-obituary-section img {
+    width: 100%; /* 确保图片填满容器 */
+    max-width: 350px; /* 设置最大宽度 */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.paper-obituary-section img:hover {
+    transform: scale(1.05);
+}
+
+/* 时间轴设计 */
+#timeline {
+    margin-top: 50px;
+}
+
+#timeline h2 {
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    color: #2C2C2C;
+    margin-bottom: 20px;
+}
+
+.VivaTimeline dl {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 30px;
+}
+
+.VivaTimeline dt,
+.VivaTimeline dd {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    margin-left: 50px;
+    padding-bottom: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+}
+
+.VivaTimeline dt {
+    font-weight: bold;
+    color: #2C2C2C;
+}
+
+.VivaTimeline dd .circ {
+    position: absolute;
+    left: -50px;
+    top: 12px;
+    width: 14px;
+    height: 14px;
+    background-color: #2C2C2C;
+    border-radius: 50%;
+}
+
+.VivaTimeline dd .time {
+    position: absolute;
+    left: -75px;
+    top: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2C2C2C;
+}
+
+.VivaTimeline .events-header {
+    font-size: 18px;
+    color: #2C2C2C;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.VivaTimeline .events-body {
+    font-size: 16px;
+    color: #5A5A5A;
+    line-height: 1.6;
+}
+
+.VivaTimeline dt:hover,
+.VivaTimeline dd:hover {
+    color: #8B4513;
+}
+
+#slideshow {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: auto;
+}
+
+.fade {
+    animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* 下一页 & 上一页按钮 */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 花籃展示区设计 */
+#flower-basket-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* 图片之间的间距 */
+    justify-content: center; /* 居中排列 */
+    margin-top: 20px;
+}
+
+.flower-basket-item {
+    max-width: 220px; /* 控制单个花篮图片项的最大宽度 */
+    text-align: center;
+    margin-bottom: 20px; /* 图片项之间的间距 */
+}
+
+.flower-basket-item img {
+    width: 100%; /* 图片自适应容器宽度 */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 10px; /* 图片与价格之间的间距 */
+}
+
+.flower-basket-item img:hover {
+    transform: scale(1.05);
+}
+
+.flower-basket-item .price {
+    font-size: 18px; /* 增大价格字体 */
+    color: #8B4513; /* 价格字体颜色 */
+    font-weight: bold; /* 使价格加粗 */
+    margin-top: 10px; /* 保持价格与图片的间距 */
+}
+
+/* 页脚部分的样式 */
+footer {
+    background-color: #f0f0f0; /* 页脚背景颜色 */
+    padding: 20px; /* 页脚的内边距 */
+    text-align: center; /* 文本居中对齐 */
+    font-family: 'CustomFont', 'Merriweather', serif; /* 使用手写字体和备用字体 */
+    font-size: 14px; /* 字体大小 */
+    color: #5A5A5A; /* 字体颜色 */
+    border-top: 2px solid #8B4513; /* 页脚顶部的分割线 */
+}
+
+footer p {
+    margin: 0; /* 移除段落的默认外边距 */
+}
+
+footer a {
+    color: #8B4513; /* 链接颜色 */
+    text-decoration: none; /* 去除链接下划线 */
+    transition: color 0.3s ease; /* 链接颜色的渐变效果 */
+}
+
+footer a:hover {
+    color: #A0522D; /* 鼠标悬停时的链接颜色 */
+}
+
+/* 页脚签名的特殊样式 */
+.footer-signature {
+    font-family: 'CustomFont', 'Merriweather', serif; /* 使用自定义字体 */
+    font-size: 16px; /* 字体大小 */
+    color: #8B4513; /* 字体颜色 */
+}
+
+/* 响应式设计：在小屏幕上的页脚样式 */
+@media (max-width: 768px) {
+    footer {
+        font-size: 12px; /* 小屏幕上的字体大小 */
+        padding: 15px; /* 内边距稍微缩小 */
+    }
+}
