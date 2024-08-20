@@ -12,14 +12,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 音樂播放
-    const audio = document.getElementById('background-music');
-    if (audio) {
-        audio.muted = false; // 取消靜音
-        audio.play().catch(error => {
-            console.log('Autoplay was prevented:', error);
-        });
-    }
+    window.onload = function() {
+        const audio = document.getElementById('background-music');
+        if (audio) {
+            audio.muted = false; // 取消静音
+            audio.play().catch(error => {
+                console.log('Autoplay was prevented:', error);
+            });
+        }
+    };
+    
+/* 渐显动画效果 */
+.fade-in-text {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.map-container {
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+    const fadeInTexts = document.querySelectorAll('.fade-in-text');
+    
+    fadeInTexts.forEach((text, index) => {
+        setTimeout(() => {
+            text.style.opacity = '1';
+        }, index * 1500); // 每个段落延迟1.5秒逐个渐显
+    });
+});
 
     // 幻灯片功能
     let slideIndex = 0;
