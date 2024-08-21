@@ -206,8 +206,6 @@
                     <p class="price"><strong>H款NT$6,500/1對</strong></p>
                 </div>
             </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
             <p><br>訂購花籃請點選<a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank"><strong>這裡</strong></a>。</p>
         </section>
 
@@ -231,7 +229,20 @@
 .price {
     margin-top: 10px;
     font-size: 16px;
-}</style>
+}
+            
+</style>
+
+    <script>
+    document.getElementById('show-flower-baskets').addEventListener('click', function() {
+        const gallery = document.getElementById('flower-basket-gallery');
+        if (gallery.style.display === 'none' || gallery.style.display === '') {
+            gallery.style.display = 'flex';
+        } else {
+            gallery.style.display = 'none';
+        }
+    });
+</script>
         
         <!-- 固定聯絡方式 -->
         <div id="fixed-links">
