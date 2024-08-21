@@ -82,13 +82,36 @@
         </div>
 
         <!-- 追思相片集 -->
-        <section>
-            <h2><strong>追思相片集</strong></h2>
-            <div class="slideshow">
-                <div><img src="image/IMG_5394.jpeg" alt="照片1"></div>
-                <div><img src="image/IMG_9495.jpeg" alt="照片2"></div>
-            </div>
-        </section>
+<section>
+    <h2><strong>追思相片集</strong></h2>
+    <div class="slideshow">
+        <div><img src="image/IMG_5394.jpeg" alt="照片1"></div>
+        <div><img src="image/IMG_9495.jpeg" alt="照片2"></div>
+    </div>
+</section>
+
+<style>
+    .slideshow {
+        width: 100%;
+        height: 100vh; /* 将幻灯片高度设为视口高度 */
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slideshow div {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slideshow img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* 确保图片以适应页面大小的方式缩放 */
+    }
+</style>
 
         <!-- 致贈花籃部分 -->
         <section id="donate-flower">
