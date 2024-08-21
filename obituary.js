@@ -15,16 +15,6 @@
             });
         }
 
-        // 初始化花篮展示功能
-        const flowerBasketButton = document.getElementById("show-flower-baskets");
-        const flowerBasketGallery = document.getElementById("flower-basket-gallery");
-
-        if (flowerBasketButton && flowerBasketGallery) {
-            flowerBasketButton.addEventListener("click", function() {
-                flowerBasketGallery.style.display = flowerBasketGallery.style.display === "none" || flowerBasketGallery.style.display === "" ? "block" : "none";
-            });
-        }
-
         // 幻灯片播放功能
         let slideIndex = 0;
 
@@ -46,8 +36,12 @@
 
         showSlides(); // 初次调用以显示第一张幻灯片
 
-        <button onclick="toggleFlowerBasketGallery()">致赠花篮</button>
-                              
+        // 添加点击事件监听器 - 显示/隐藏花篮样式
+        document.getElementById("show-flower-baskets").addEventListener("click", function() {
+            const flowerBaskets = document.getElementById("flower-baskets");
+            flowerBaskets.style.display = (flowerBaskets.style.display === "none" || flowerBaskets.style.display === "") ? "block" : "none";
+        });
+
         // 音乐自动播放
         window.onload = function() {
             const audio = document.getElementById('background-music');
