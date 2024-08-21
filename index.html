@@ -17,13 +17,25 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
+    
 <body>
-    <!-- 背景音乐 -->
-    <audio id="background-music" autoplay loop hidden>
-    <source src="感恩的心.mp4" type="audio/mpeg">
+   <audio id="background-music" autoplay loop muted>
+    <source src="感恩的心.mp3" type="audio/mpeg">
     您的浏览器不支持音频播放。
 </audio>
 
+<script>
+    window.onload = function() {
+        const audio = document.getElementById('background-music');
+        audio.play().then(() => {
+            // 播放成功后，取消静音
+            audio.muted = false;
+        }).catch(error => {
+            console.log('Autoplay was prevented:', error);
+            // 如果自动播放被阻止，可以考虑引导用户进行交互
+        });
+    };
+</script>
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
         <h1>劉及人先生 訃告</h1>
