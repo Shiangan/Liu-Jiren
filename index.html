@@ -12,8 +12,10 @@
 </head>
  <body>
         <!-- 背景音乐 -->
-    <audio id="background-music" src="audio/千風之歌.m4a" preload="auto"></audio>
-</body>
+    <audio id="background-music" loop>
+    <source src="audio/千風之歌.m4a" type="audio/m4a">
+    您的浏览器不支持音频播放。
+</audio>
 
     
     <header>
@@ -82,7 +84,7 @@
         <!-- 追思相片集 -->
         <section>
             <h2><strong>追思相片集</strong></h2>
-            <div class="slideshow-container">
+            <div class="slideshow">
                 <div><img src="image/IMG_5394.jpeg" alt="照片1"></div>
                 <div><img src="image/IMG_9495.jpeg" alt="照片2"></div>
             </div>
@@ -90,21 +92,22 @@
 
         <!-- 致贈花籃部分 -->
         <section id="donate-flower">
-            <h2><strong>致贈花籃</strong></h2>
-            <p>為求會場一致性，致贈花籃請參見以下選項：</p>
-            <a href="javascript:void(0);" id="show-flower-baskets" class="btn"><strong>致贈花籃</strong></a>
-            <div id="flower-basket-gallery" style="display: none;">
-                <div class="flower-basket-item"> 
-                    <img src="image/花籃A.JPG" alt="花籃A">
-                    <p class="price"><strong>A款NT$2,500/1對</strong></p>
-                </div>
+    <h2><strong>致贈花籃</strong></h2>
+    <p>為求會場一致性，致贈花籃請參見以下選項：</p>
+    <a href="javascript:void(0);" id="show-flower-baskets" class="btn"><strong>致贈花籃</strong></a>
+
+    <!-- 花篮画廊，默认隐藏 -->
+    <div id="flower-basket-gallery" style="display: none;">
+        <div class="flower-basket-item">
+            <img src="image/花籃A.JPG" alt="花籃A">
+            <p class="price"><strong>A款NT$2,500/1對</strong></p>
+        </div>
+        <div class="flower-basket-item">
+            <img src="image/花籃B.JPG" alt="花籃B">
+            <p class="price"><strong>B款NT$3,000/1對</strong></p>
                 <div class="flower-basket-item">
-                    <img src="image/花籃B.JPG" alt="花籃B">
-                    <p class="price"><strong>B款NT$3,000/1對</strong></p>
-                </div>
-                <div class="flower-basket-item">
-                    <img src="image/花籃C.JPG" alt="花籃C">
-                    <p class="price"><strong>C款NT$3,500/1對</strong></p>
+            <img src="image/花籃C.JPG" alt="花籃C">
+            <p class="price"><strong>C款NT$3,500/1對</strong></p>
                 </div>
                 <div class="flower-basket-item">
                     <img src="image/花籃D.JPG" alt="花籃D">
@@ -131,8 +134,6 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-    <!-- 背景音乐 -->
-    <audio id="background-music" src="audio/千風之歌.m4a" preload="auto"></audio>
             <p><a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank"><strong>送上一份最深切的祝福</strong></a></p>
             <p><br>訂購花籃請點選<a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank"><strong>這裡</strong></a>。</p>
         </section>
@@ -150,22 +151,22 @@
 
     <!-- 名片及分享按钮部分 -->
     <section id="business-card">
-        <img src="image/名片頁.jpg" alt="名片" class="business-card-img">
-       <div id="share-buttons">
-    <p><strong>分享此頁面：</strong></p>
+    <img src="image/名片頁.jpg" alt="名片" class="business-card-img">
+    <div id="share-buttons">
+        <p><strong>分享此頁面</strong></p>
         <a href="https://www.facebook.com/sharer/sharer.php?u=https://shiangan.github.io/Liu-Jiren/" target="_blank" class="share-btn fb-share-btn">
-        <img src="image/fb.png" alt="Share on Facebook">
-    </a>
-    <a href="https://line.me/R/msg/text/?https://shiangan.github.io/Liu-Jiren/" target="_blank" class="share-btn line-share-btn">
-        <img src="image/line.png" alt="Share on Line">
-    </a>
-</div>
-    </section>
+            <img src="image/fb.png" alt="Share on Facebook">
+        </a>
+        <a href="https://line.me/R/msg/text/?https://shiangan.github.io/Liu-Jiren/" target="_blank" class="share-btn line-share-btn">
+            <img src="image/line.png" alt="Share on Line">
+        </a>
+    </div>
+</section>
 
     <!-- 页脚 -->
 <footer>
   <p>承辦禮儀公司 祥安生命有限公司 ｜ 禮儀師：陳妍如</p>
-  <p>© 2024 劉及人訃聞公告 | <span class="footer-signature"> 祥安生命有限公司</span>版權所有 |
+  <p>© 2024 劉及人訃聞公告 | <span class="footer-signature"> 祥安生命有限公司</span>版權所有 |</p>
 </footer>
     
 </body>
