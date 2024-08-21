@@ -468,34 +468,40 @@
     }
 </style>
 /* 页脚部分的样式 */
-  footer {
+footer {
     background-color: #f4f4f4; /* 背景颜色 */
     padding: 20px; /* 内边距 */
     text-align: center; /* 文本居中 */
     font-family: '清松手写体5.ttf', Arial, sans-serif; /* 字体 */
-  }
+    display: flex; /* 使用 Flexbox */
+    flex-direction: column; /* 垂直方向布局 */
+    align-items: center; /* 水平居中对齐 */
+    justify-content: center; /* 垂直居中对齐 */
+    min-height: 100px; /* 确保页脚有足够的高度 */
+}
 
-  footer p {
+footer p {
     margin: 5px 0; /* 上下外边距 */
     color: #333; /* 文字颜色 */
-  }
+}
 
-  .footer-signature {
+.footer-signature {
     font-weight: bold; /* 字体加粗 */
-  }
+}
 
-  .bold {
+.bold {
     font-weight: bold; /* 字体加粗 */
     text-decoration: none; /* 去掉链接下划线 */
-  }
+}
 
-  footer img {
+footer img {
     vertical-align: middle; /* 图标垂直对齐 */
-  }
+}
 
-  footer a {
+footer a {
     margin: 0 10px; /* 图标间距 */
-  }
+}
+
 /* 响应式设计：在小屏幕上的页脚样式 */
 @media (max-width: 768px) {
     footer {
@@ -503,7 +509,6 @@
         padding: 15px; /* 内边距稍微缩小 */
     }
 }
-
 /* 名片图片样式 */
 #business-card {
     text-align: center;
