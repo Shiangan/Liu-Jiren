@@ -31,27 +31,35 @@
     }
 
     /* 追思相片集设计 */
-    #slideshow {
-        max-width: 100%;
-        position: relative;
-        margin: auto;
-        overflow: hidden;
-        background-color: #f1f1f1;
-    }
+       <script>
+        var slideIndex = 0;
+        showSlides();
 
-    .slideshow-container {
-        position: relative;
-        max-width: 100%;
-        margin: auto;
-    }
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // 更改图片每3秒
+        }
 
-    .slideshow-container img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        object-fit: cover;
-    }
+        function plusSlides(n) {
+            var slides = document.getElementsByClassName("mySlides");
+            slideIndex += n;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            if (slideIndex < 1) { slideIndex = slides.length }
+            showSlides();
+        }
+
+        function
+toggleFlowerBasketGallery() {
+            var gallery = document.getElementById('flower-basket-gallery');
+            gallery.style.display = gallery.style.display === 'none' ? 'flex' : 'none';
+        }
 
     /* 幻灯片导航按钮 */
     .prev, .next {
