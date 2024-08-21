@@ -1,7 +1,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-
         // 时间轴动画
         function animateTimeline() {
             const timelineBlocks = document.querySelectorAll(".VivaTimeline .event");
@@ -15,20 +14,11 @@
             });
         }
 
-        document.getElementById('show-flower-baskets').addEventListener('click', function() {
-    var gallery = document.getElementById('flower-basket-gallery');
-    if (gallery.style.display === 'none') {
-        gallery.style.display = 'block';
-    } else {
-        gallery.style.display = 'none';
-    }
-});
-
         // 幻灯片播放功能
         let slideIndex = 0;
+        const slides = document.querySelectorAll("#slideshow .mySlides"); // 确保 slides 变量已定义
 
         function showSlides() {
-            const slides = document.querySelectorAll("#slideshow .mySlides");
             slides.forEach(slide => slide.style.display = "none");
             slideIndex++;
             if (slideIndex > slides.length) { slideIndex = 1; }
@@ -45,42 +35,12 @@
 
         showSlides(); // 初次调用以显示第一张幻灯片
 
-document.addEventListener('DOMContentLoaded', function() {
-        // 添加点击事件监听器
-        document.getElementById("show-flower-baskets").addEventListener("click", function() {
-            const flowerBaskets = document.getElementById("flower-baskets");
-            if (flowerBaskets.style.display === "none" || flowerBaskets.style.display === "") {
-                flowerBaskets.style.display = "block"; // 显示花篮样式
-            } else {
-                flowerBaskets.style.display = "none"; // 隐藏花篮样式
-            }
-        });
-    });
-</script>
-
-        <script>
-        // 音乐自动播放
-        window.onload = function() {
-            const audio = document.getElementById('background-music');
-            if (audio) {
-                audio.play().then(() => {
-                    // 播放成功后取消静音
-                    audio.muted = false;
-                }).catch(error => {
-                    console.log('Autoplay was prevented:', error);
-                    // 如果自动播放被阻止，考虑添加用户交互提示
-                });
-            }
-        };
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
+        // 切换花篮画廊的显示状态
         const showButton = document.getElementById('show-flower-baskets');
         const flowerGallery = document.getElementById('flower-basket-gallery');
 
         if (showButton && flowerGallery) {
             showButton.addEventListener('click', function() {
-                // 切换花篮画廊的显示状态
                 if (flowerGallery.style.display === 'none' || flowerGallery.style.display === '') {
                     flowerGallery.style.display = 'flex';
                 } else {
@@ -88,9 +48,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-    });
-</script>
-    </script>
+
+        // 音乐自动播放
+        window.onload = function() {
+            const audio = document.getElementById('background-music');
+            if (audio) {
+                audio.play().then(() => {
+                    audio.muted = false;
+                }).catch(error => {
+                    console.log('Autoplay was prevented:', error);
+                });
+            }
+        };
+
         // 渐显文本效果
         const fadeInTexts = document.querySelectorAll('.fade-in-text');
         fadeInTexts.forEach((text, index) => {
