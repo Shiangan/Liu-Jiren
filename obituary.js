@@ -49,17 +49,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 
+        <script>
         // 音乐自动播放
         window.onload = function() {
             const audio = document.getElementById('background-music');
             if (audio) {
-                audio.muted = false; // 取消静音
-                audio.play().catch(error => {
+                audio.play().then(() => {
+                    // 播放成功后取消静音
+                    audio.muted = false;
+                }).catch(error => {
                     console.log('Autoplay was prevented:', error);
+                    // 如果自动播放被阻止，考虑添加用户交互提示
                 });
             }
         };
-
+    </script>
         // 渐显文本效果
         const fadeInTexts = document.querySelectorAll('.fade-in-text');
         fadeInTexts.forEach((text, index) => {
