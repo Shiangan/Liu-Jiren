@@ -36,11 +36,18 @@
 
         showSlides(); // 初次调用以显示第一张幻灯片
 
-        // 添加点击事件监听器 - 显示/隐藏花篮样式
+document.addEventListener('DOMContentLoaded', function() {
+        // 添加点击事件监听器
         document.getElementById("show-flower-baskets").addEventListener("click", function() {
             const flowerBaskets = document.getElementById("flower-baskets");
-            flowerBaskets.style.display = (flowerBaskets.style.display === "none" || flowerBaskets.style.display === "") ? "block" : "none";
+            if (flowerBaskets.style.display === "none" || flowerBaskets.style.display === "") {
+                flowerBaskets.style.display = "block"; // 显示花篮样式
+            } else {
+                flowerBaskets.style.display = "none"; // 隐藏花篮样式
+            }
         });
+    });
+</script>
 
         // 音乐自动播放
         window.onload = function() {
