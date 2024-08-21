@@ -100,44 +100,77 @@
         </section>
 
         <style>
-            .slideshow {
-                width: 100%;
-                max-width: 80%; /* 确保幻灯片不会超出页面宽度 */
-                height: 50vh; /* 根据需求调整高度 */
-                overflow: hidden;
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
+        /* 幻灯片容器 */
+        .slideshow {
+            width: 100%;
+            max-width: 80%; /* 确保幻灯片不会超出页面宽度 */
+            height: 50vh; /* 根据需求调整高度 */
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto; /* 居中对齐幻灯片 */
+            box-sizing: border-box; /* 包括内边距和边框在内的宽度和高度计算 */
+        }
 
-            .slides {
-                display: flex;
-                width: 100%;
-                height: 100%;
-                animation: slide 10s infinite;
-            }
+        /* 幻灯片内容 */
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 1s ease-in-out; /* 添加过渡效果 */
+        }
 
-            .slides div {
-                flex-shrink: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
+        /* 每张幻灯片 */
+        .slides div {
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-            .slides img {
-                width: auto;
-                height: 100%;
-                object-fit: contain; /* 确保图片适应容器且不会被裁剪 */
-            }
+        /* 幻灯片中的图片 */
+        .slides img {
+            width: 100%; /* 确保图片宽度适应容器 */
+            height: auto; /* 保持图片高度按比例缩放 */
+            max-height: 100%; /* 图片高度不能超过容器的高度 */
+            object-fit: contain; /* 确保图片适应容器且不会被裁剪 */
+        }
+    </style>
+</head>
+<body>
 
-            @keyframes slide {
-                0% { transform: translateX(0); }
-                50% { transform: translateX(-100%); }
-                100% { transform: translateX(0); }
-            }
+<!-- 幻灯片容器 -->
+<div class="slideshow">
+    <div class="slides">
+        <div><img src="IMG_5394.jpeg" alt="Slide 1"></div>
+        <div><img src="IMG_9495.jpeg" alt="Slide 2"></div>
+        <!-- 可以继续添加更多幻灯片 -->
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slides div').length;
+
+    function showSlide(index) {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+        slideIndex = (slideIndex + 1) % totalSlides;
+        showSlide(slideIndex);
+    }
+
+    setInterval(nextSlide, 3000); // 每3秒切换一次幻灯片
+</script>
         </style>
 
         <!-- 致贈花籃部分 -->
