@@ -417,40 +417,56 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* 花籃展示区设计 */
-#flower-basket-baskets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* 图片之间的间距 */
-    justify-content: center; /* 居中排列 */
-    margin-top: 20px;
-}
+<style>
+    #flower-basket-gallery {
+        display: none; /* 默认隐藏 */
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+    }
 
-.flower-basket-item {
-    max-width: 220px; /* 控制单个花篮图片项的最大宽度 */
-    text-align: center;
-    margin-bottom: 20px; /* 图片项之间的间距 */
-}
+    .flower-basket-item {
+        max-width: 220px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-.flower-basket-item img {
-    width: 100%; /* 图片自适应容器宽度 */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    margin-bottom: 10px; /* 图片与价格之间的间距 */
-}
+    .flower-basket-item img {
+        width: 100%;
+        height: auto; /* 保持图像宽高比 */
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
 
-.flower-basket-item img:hover {
-    transform: scale(1.05);
-}
+    .flower-basket-item img:hover {
+        transform: scale(1.05);
+    }
 
-.flower-basket-item .price {
-    font-size: 18px; /* 增大价格字体 */
-    color: #8B4513; /* 价格字体颜色 */
-    font-weight: bold; /* 使价格加粗 */
-    margin-top: 7px; /* 保持价格与图片的间距 */
-}
+    .flower-basket-item .price {
+        font-size: 18px;
+        color: #8B4513;
+        font-weight: bold;
+        margin-top: 7px;
+    }
 
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
 /* 页脚部分的样式 */
   footer {
     background-color: #f4f4f4; /* 背景颜色 */
