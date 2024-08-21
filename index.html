@@ -85,31 +85,51 @@
 <section>
     <h2><strong>追思相片集</strong></h2>
     <div class="slideshow">
-        <div><img src="image/IMG_5394.jpeg" alt="照片1"></div>
-        <div><img src="image/IMG_9495.jpeg" alt="照片2"></div>
+        <div class="slides">
+            <div><img src="image/IMG_5394.jpeg" alt="照片1"></div>
+            <div><img src="image/IMG_9495.jpeg" alt="照片2"></div>
+        </div>
     </div>
 </section>
 
 <style>
     .slideshow {
         width: 100%;
-        height: 100vh; /* 将幻灯片高度设为视口高度 */
+        max-width: 100%; /* 确保幻灯片不会超出页面宽度 */
+        height: 80vh; /* 根据需求调整高度 */
         overflow: hidden;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .slideshow div {
+    .slides {
+        display: flex;
+        width: 100%; 
+        height: 100%;
+        animation: slide 10s infinite;
+    }
+
+    .slides div {
         flex-shrink: 0;
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .slideshow img {
-        width: 100%;
+    .slides img {
+        width: auto;
         height: 100%;
-        object-fit: contain; /* 确保图片以适应页面大小的方式缩放 */
+        object-fit: contain; /* 确保图片适应容器且不会被裁剪 */
+    }
+
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-100%); }
+        100% { transform: translateX(0); }
     }
 </style>
 
@@ -167,7 +187,7 @@
         <a href="tel:0978583699" class="bold">
            <img src="image/24小時專線.png" alt="24小時服務電話" style="width: 70px; height: 30px;">
        </a> 
-       <a href="https://line.me/R/ti/p/%40yourlineid" target="_blank" class="bold">
+       <a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank" class="bold">
            <img src="image/IMG_4177.webp" alt="LINE 聯絡我們" style="width: 50px; height: 50px;">
        </a>
     </div>
