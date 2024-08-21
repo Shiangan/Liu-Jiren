@@ -46,6 +46,8 @@
 
         showSlides(); // 初次调用以显示第一张幻灯片
 
+        <button onclick="toggleFlowerBasketGallery()">致赠花篮</button>
+                              
         // 音乐自动播放
         window.onload = function() {
             const audio = document.getElementById('background-music');
