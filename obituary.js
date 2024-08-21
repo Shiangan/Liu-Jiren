@@ -63,6 +63,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         };
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const showButton = document.getElementById('show-flower-baskets');
+        const flowerGallery = document.getElementById('flower-basket-gallery');
+
+        if (showButton && flowerGallery) {
+            showButton.addEventListener('click', function() {
+                // 切换花篮画廊的显示状态
+                if (flowerGallery.style.display === 'none' || flowerGallery.style.display === '') {
+                    flowerGallery.style.display = 'flex';
+                } else {
+                    flowerGallery.style.display = 'none';
+                }
+            });
+        }
+    });
+</script>
     </script>
         // 渐显文本效果
         const fadeInTexts = document.querySelectorAll('.fade-in-text');
