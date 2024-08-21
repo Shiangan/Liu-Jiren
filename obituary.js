@@ -15,6 +15,15 @@
             });
         }
 
+        document.getElementById('show-flower-baskets').addEventListener('click', function() {
+    var gallery = document.getElementById('flower-basket-gallery');
+    if (gallery.style.display === 'none') {
+        gallery.style.display = 'block';
+    } else {
+        gallery.style.display = 'none';
+    }
+});
+
         // 幻灯片播放功能
         let slideIndex = 0;
 
