@@ -18,9 +18,10 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
     
-<audio id="background-music" autoplay loop hidden>
-    <source src="珍珠港事件.mp3" type="audio/mpeg">
-</audio>
+    <audio id="background-music" autoplay loop>
+        <source src="珍珠港事件.mp3" type="audio/mpeg">
+        瀏覽器不支持音頻播放。
+    </audio>
  
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
@@ -294,12 +295,18 @@
 
     <!-- JavaScript -->
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const audio = document.getElementById('background-music');
-        audio.play().catch(error => {
-            console.log('Autoplay was prevented:', error);
-            // 自动播放被阻止时，可能需要提示用户点击页面进行播放
-        });
+            window.onload = function() {
+            const audio = document.getElementById('background-music');
+
+            // 静音播放以确保自动播放
+            audio.muted = true;
+            audio.play().then(() => {
+                // 取消静音
+                audio.muted = false;
+            }).catch(error => {
+                console.log('Autoplay was prevented:', error);
+            });
+        };
     
 
         // 幻灯片播放功能
