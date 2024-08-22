@@ -3,105 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
     <meta property="og:title" content="劉及人訃告">
     <meta property="og:description" content="追思劉及人先生的生平和追悼儀式">
     <meta property="og:image" content="https://shiangan.com/Shiangan/Liu-Jiren/image/logo.jpg">
     <meta property="og:url" content="https://shiangan.com/Shiangan/Liu-Jiren">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="Shiangan-obituary">
+</head>
     <title>訃聞公告</title>
     <link rel="stylesheet" href="obituary.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
-    <style>
-        /* 页脚部分的样式 */
-        footer {
-            background-color: #f4f4f4; /* 背景颜色 */
-            padding: 20px; /* 内边距 */
-            text-align: center; /* 文本居中 */
-            font-family: '清松手写体5.ttf', Arial, sans-serif; /* 字体 */
-        }
-
-        footer p {
-            margin: 5px 0; /* 上下外边距 */
-            color: #333; /* 文字颜色 */
-        }
-
-        .footer-signature {
-            font-weight: bold; /* 字体加粗 */
-        }
-
-        .bold {
-            font-weight: bold; /* 字体加粗 */
-            text-decoration: none; /* 去掉链接下划线 */
-        }
-
-        footer img {
-            vertical-align: middle; /* 图标垂直对齐 */
-        }
-
-        footer a {
-            margin: 0 10px; /* 图标间距 */
-        }
-
-        /* 幻灯片样式 */
-        .slideshow-container {
-            position: relative;
-            max-width: 100%; /* 确保幻灯片不会超出页面宽度 */
-            margin: auto;
-        }
-
-        .slide {
-            display: none; /* 隐藏幻灯片 */
-            text-align: center;
-        }
-
-        .slide img {
-            width: 100%; /* 确保图片适应幻灯片容器 */
-            height: auto; /* 保持图片比例 */
-        }
-
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: #fff;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* 响应式设计：在小屏幕上的页脚样式 */
-        @media (max-width: 768px) {
-            footer {
-                font-size: 12px; /* 小屏幕上的字体大小 */
-                padding: 15px; /* 内边距稍微缩小 */
-            }
-        }
-    </style>
 </head>
-<body>
-    <!-- 背景音乐 -->
-    <audio id="background-music" autoplay loop hidden>
-        <source src="audio/化為千風.mp3" type="audio/mp3">
-        您的浏览器不支持音频播放。
+    
+  <body>
+    <!-- 音频元素 -->
+    <audio id="background-music" autoplay loop muted>
+        <source src="珍珠港事件.mp3" type="audio/mpeg">
+        瀏覽器不支持音頻播放。
     </audio>
 
+    <!-- 其余内容 -->
+
+    <script>
+        // 页面加载后取消静音
+        window.addEventListener('load', () => {
+            const audio = document.getElementById('background-music');
+            audio.muted = false; // 取消静音
+            audio.play().catch(error => {
+                console.log('自动播放被阻止:', error);
+            });
+        });
+    </script>
+</body>
+ 
+ 
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
         <h1>劉及人先生 訃告</h1>
@@ -112,9 +50,9 @@
         <section class="main-photo-section">
             <img id="main-photo" src="image/劉及人的主要照片.JPG" alt="追思照片">
             <p id="life-story">
-                <strong>我們敬愛的親人，劉及人先生，於113年08月18日，早上08：50在家人的陪伴下，安詳離世。</strong>
+                <strong>我們敬愛的親人，劉及人先生，於113年08月18日，早上08：50，在家人的陪伴下，安詳離世。</strong>
             </p>
-            <p>護喪妻 陳圓娟 率 孝男 克威 親視含殮 遵禮成服 設靈於懷愛館（原第二殯儀館）景行樓 3F 蓮位堂［I1-06]</p>
+            <p>護喪妻 陳圓娟 率 孝男 克威 親視含殮 遵禮成服 設靈於 台北懷愛館（原第二殯儀館）景行樓 3F 蓮位堂［I1-06]</p>
             <p>將設奠於113年08月30日舉行追思會儀式，感謝親友們的致意與陪伴，給予及人先生最深的祝福，家人們銘記在心，衷心感謝。</p>
         </section>
 
@@ -169,18 +107,79 @@
         <!-- 追思相片集 -->
         <section>
             <h2><strong>追思相片集</strong></h2>
-            <div class="slideshow-container">
-                <div class="slide">
-                    <img src="image/IMG_5394.jpeg" alt="照片1">
+            <div class="slideshow">
+                <div class="slides">
+                    <div><img src="image/IMG_5394.jpeg" alt="照片1"></div>
+                    <div><img src="image/IMG_9495.jpeg" alt="照片2"></div>
                 </div>
-                <div class="slide">
-                    <img src="image/IMG_9495.jpeg" alt="照片2">
-                </div>
-                <!-- 添加更多幻灯片 -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </section>
+
+        <style>
+        /* 幻灯片容器 */
+        .slideshow {
+            width: 100%;
+            max-width: 80%; /* 确保幻灯片不会超出页面宽度 */
+            height: 50vh; /* 根据需求调整高度 */
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto; /* 居中对齐幻灯片 */
+            box-sizing: border-box; /* 包括内边距和边框在内的宽度和高度计算 */
+        }
+
+        /* 幻灯片内容 */
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 1s ease-in-out; /* 添加过渡效果 */
+        }
+
+        /* 每张幻灯片 */
+        .slides div {
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 幻灯片中的图片 */
+        .slides img {
+            width: 100%; /* 确保图片宽度适应容器 */
+            height: auto; /* 保持图片高度按比例缩放 */
+            max-height: 100%; /* 图片高度不能超过容器的高度 */
+            object-fit: contain; /* 确保图片适应容器且不会被裁剪 */
+        }
+    </style>
+</head>
+<body>
+
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slides div').length;
+
+    function showSlide(index) {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+        slideIndex = (slideIndex + 1) % totalSlides;
+        showSlide(slideIndex);
+    }
+
+    setInterval(nextSlide, 3000); // 每3秒切换一次幻灯片
+
+        </style>
 
         <!-- 致贈花籃部分 -->
         <section id="donate-flower">
@@ -188,44 +187,96 @@
             <p>為求會場一致性，致贈花籃請參見以下選項：</p>
             <a href="javascript:void(0);" id="show-flower-baskets" class="btn"><strong>致贈花籃</strong></a>
 
-            <!-- 花篮画廊，默认隐藏 -->
-            <div id="flower-basket-gallery" style="display: none;">
-                <div class="flower-basket-item">
-                    <img src="image/花籃A.JPG" alt="花籃A">
-                    <p class="price"><strong>A款NT$2,500/1對</strong></p>
-                </div>
-                <div class="flower-basket-item">
-                    <img src="image/花籃B.JPG" alt="花籃B">
-                    <p class="price"><strong>B款NT$3,000/1對</strong></p>
-                </div>
-                <div class="flower-basket-item">
-                    <img src="image/花籃C.JPG" alt="花籃C">
-                    <p class="price"><strong>C款NT$3,500/1對</strong></p>
-                </div>
-                <div class="flower-basket-item">
-                    <img src="image/花籃D.JPG" alt="花籃D">
-                    <p class="price"><strong>D款NT$4,000/1對</strong></p>
-                </div>
-                <div class="flower-basket-item">
-                    <img src="image/花籃E.JPG" alt="花籃E">
-                    <p class="price"><strong>E款NT$5,000/1對</strong></p>
-                </div>
-                <div class="flower-basket-item">
-                    <img src="image/花籃F.JPG" alt="花籃F">
-                    <p class="price"><strong>F款NT$5,500/1對</strong></p>
-                </div>
-                <div class="flower-basket-item">
-                    <img src="image/花籃G.JPG" alt="花籃G">
-                    <p class="price"><strong>G款NT$6,000/1對</strong></p>
-                </div>
-                <div class="flower-basket-item">
-                    <img src="image/花籃H.JPG" alt="花籃H">
-                    <p class="price"><strong>H款NT$6,500/1對</strong></p>
-                </div>
-            </div>
-            <p>訂購花籃請點選<a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank"><strong>這裡</strong></a>。</p>
-        </section>
+                <!-- 花篮画廊，默认隐藏 -->
+    <div id="flower-basket-gallery" style="display: none;">
+        <div class="flower-basket-item">
+            <a href="image/花籃A.JPG" data-lightbox="flower-baskets" data-title="A款NT$2,500/1對">
+                <img src="image/花籃A.JPG" alt="花籃A">
+            </a>
+            <p class="price"><strong>A款NT$2,500/1對</strong></p>
+        </div>
+        <div class="flower-basket-item">
+            <a href="image/花籃B.JPG" data-lightbox="flower-baskets" data-title="B款NT$3,000/1對">
+                <img src="image/花籃B.JPG" alt="花籃B">
+            </a>
+            <p class="price"><strong>B款NT$3,000/1對</strong></p>
+        </div>
+        <div class="flower-basket-item">
+            <a href="image/花籃C.JPG" data-lightbox="flower-baskets" data-title="C款NT$3,000/1對">
+                <img src="image/花籃C.JPG" alt="花籃C">
+            </a>
+            <p class="price"><strong>C款NT$3,500/1對</strong></p>
+        </div>
+        <div class="flower-basket-item">
+            <a href="image/花籃D.JPG" data-lightbox="flower-baskets" data-title="D款NT$3,000/1對">
+                <img src="image/花籃D.JPG" alt="花籃D">
+            </a>
+            <p class="price"><strong>D款NT$4,000/1對</strong></p>
+        </div>
+        <div class="flower-basket-item">
+            <a href="image/花籃E.JPG" data-lightbox="flower-baskets" data-title="E款NT$3,000/1對">
+                <img src="image/花籃E.JPG" alt="花籃E">
+            </a>
+            <p class="price"><strong>E款NT$5,000/1對</strong></p>
+        </div>
+        <div class="flower-basket-item">
+            <a href="image/花籃F.JPG" data-lightbox="flower-baskets" data-title="F款NT$3,000/1對">
+                <img src="image/花籃F.JPG" alt="花籃F">
+            </a>
+            <p class="price"><strong>F款NT$5,500/1對</strong></p>
+        </div>
+        <div class="flower-basket-item">
+            <a href="image/花籃G.JPG" data-lightbox="flower-baskets" data-title="G款NT$3,000/1對">
+                <img src="image/花籃G.JPG" alt="花籃G">
+            </a>
+            <p class="price"><strong>G款NT$6,000/1對</strong></p>
+        </div>
+        <div class="flower-basket-item">
+            <a href="image/花籃H.JPG" data-lightbox="flower-baskets" data-title="H款NT$3,000/1對">
+                <img src="image/花籃H.JPG" alt="花籃H">
+            </a>
+            <p class="price"><strong>H款NT$6,500/1對</strong></p>
+        </div>
+        <!-- 依此类推 -->
+    </div>
+    <p><br>訂購花籃請點選<a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank"><strong>這裡</strong></a>。</p>
+</section>
 
+        <style>#flower-basket-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.flower-basket-item {
+    max-width: 200px; /* 控制花籃圖片最大寬度 */
+    text-align: center;
+}
+
+.flower-basket-item img {
+    width: 100%;
+    height: auto; /* 保持圖片比例 */
+}
+
+.price {
+    margin-top: 10px;
+    font-size: 16px;
+}
+            
+</style>
+
+    <script>
+    document.getElementById('show-flower-baskets').addEventListener('click', function() {
+        const gallery = document.getElementById('flower-basket-gallery');
+        if (gallery.style.display === 'none' || gallery.style.display === '') {
+            gallery.style.display = 'flex';
+        } else {
+            gallery.style.display = 'none';
+        }
+    });
+</script>
+        
         <!-- 固定聯絡方式 -->
         <div id="fixed-links">
             <a href="tel:0978583699" class="bold">
@@ -252,32 +303,19 @@
     </main>
 
     <!-- 页脚 -->
-    <footer>
-        <p>承辦禮儀公司 祥安生命有限公司 ｜ 禮儀師：陳妍如</p>
-        <p>© 2024 劉及人訃聞公告 | <span class="footer-signature">祥安生命有限公司</span>版權所有 |</p>
-    </footer>
+    <footer style="text-align: center;">
+    <p>承辦禮儀公司 祥安生命有限公司 ｜ 禮儀師：陳妍如</p>
+    <p>© 2024 劉及人訃聞公告 | <span class="footer-signature">祥安生命有限公司</span> 版權所有 |</p>
+</footer>
+
+     <style></style>
 
     <!-- JavaScript -->
-    <script>
-        // 音樂自動播放
-        window.onload = function() {
-            const audio = document.getElementById('background-music');
-            if (audio) {
-                audio.play().then(() => {
-                    // 播放成功後取消靜音
-                    audio.muted = false;
-                }).catch(error => {
-                    console.log('Autoplay was prevented:', error);
-                    // 如果自動播放被阻止，考慮添加用戶交互提示
-                });
-            }
-        };
-
         // 幻灯片播放功能
         let slideIndex = 0;
 
         function showSlides() {
-            const slides = document.querySelectorAll(".slide");
+            const slides = document.querySelectorAll(".slides div");
             slides.forEach(slide => slide.style.display = "none");
             slideIndex++;
             if (slideIndex > slides.length) { slideIndex = 1; }
@@ -287,7 +325,7 @@
 
         function plusSlides(n) {
             slideIndex += n;
-            const slides = document.querySelectorAll(".slide");
+            const slides = document.querySelectorAll(".slides div");
             if (slideIndex > slides.length) { slideIndex = 1; }
             if (slideIndex < 1) { slideIndex = slides.length; }
             showSlides();
@@ -304,6 +342,23 @@
                 gallery.style.display = 'none';
             }
         });
+
+        // 追思动画
+        function animateTimeline() {
+            const timelineBlocks = document.querySelectorAll(".VivaTimeline .event");
+            timelineBlocks.forEach(function (block) {
+                const rect = block.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
+                    block.classList.add("animated");
+                } else {
+                    block.classList.remove("animated");
+                }
+            });
+        }
+
+        // 初始化动画并监听滚动事件
+        animateTimeline();
+        window.addEventListener('scroll', animateTimeline);
 
         // 渐显文本效果
         const fadeInTexts = document.querySelectorAll('.fade-in-text');
