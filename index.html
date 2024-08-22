@@ -18,27 +18,10 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
     
-  <body>
-    <!-- 音频元素 -->
-    <audio id="background-music" autoplay loop muted>
+    <audio id="background-music" autoplay loop>
         <source src="珍珠港事件.mp3" type="audio/mpeg">
         瀏覽器不支持音頻播放。
     </audio>
-
-    <!-- 其余内容 -->
-
-    <script>
-        // 页面加载后取消静音
-        window.addEventListener('load', () => {
-            const audio = document.getElementById('background-music');
-            audio.muted = false; // 取消静音
-            audio.play().catch(error => {
-                console.log('自动播放被阻止:', error);
-            });
-        });
-    </script>
-</body>
- 
  
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
@@ -178,7 +161,7 @@
     }
 
     setInterval(nextSlide, 3000); // 每3秒切换一次幻灯片
-
+</script>
         </style>
 
         <!-- 致贈花籃部分 -->
@@ -312,6 +295,20 @@
 
     <!-- JavaScript -->
     <script>
+            window.onload = function() {
+            const audio = document.getElementById('background-music');
+
+            // 静音播放以确保自动播放
+            audio.muted = true;
+            audio.play().then(() => {
+                // 取消静音
+                audio.muted = false;
+            }).catch(error => {
+                console.log('Autoplay was prevented:', error);
+            });
+        };
+    
+
         // 幻灯片播放功能
         let slideIndex = 0;
 
