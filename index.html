@@ -8,7 +8,7 @@
     <meta property="og:description" content="追思劉及人先生的生平和追悼儀式">
     <meta property="og:image" content="https://shiangan.com/Shiangan/Liu-Jiren/image/logo.jpg">
     <meta property="og:url" content="https://shiangan.com/Shiangan/Liu-Jiren">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="Shiangan-obituary">
 </head>
     <title>訃聞公告</title>
     <link rel="stylesheet" href="obituary.css">
@@ -21,20 +21,7 @@
 <audio id="background-music" autoplay loop>
     <source src="珍珠港事件.mp3" type="audio/mpeg">
 </audio>
-
-<script>
-    window.onload = function() {
-        const audio = document.getElementById('background-music');
-        audio.play().then(() => {
-            // 播放成功后，取消静音
-            audio.muted = false;
-        }).catch(error => {
-            console.log('Autoplay was prevented:', error);
-            // 如果自动播放被阻止，可以考虑引导用户进行交互
-        });
-    };
-</script>
-    
+ 
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
         <h1>劉及人先生 訃告</h1>
@@ -307,19 +294,16 @@
 
     <!-- JavaScript -->
     <script>
-        // 音樂自動播放
-        window.onload = function() {
-            const audio = document.getElementById('background-music');
-            if (audio) {
-                audio.play().then(() => {
-                    // 播放成功後取消靜音
-                    audio.muted = false;
-                }).catch(error => {
-                    console.log('Autoplay was prevented:', error);
-                    // 如果自動播放被阻止，考慮添加用戶交互提示
-                });
-            }
-        };
+    window.onload = function() {
+        const audio = document.getElementById('background-music');
+        audio.play().then(() => {
+            // 播放成功后，取消静音
+            audio.muted = false;
+        }).catch(error => {
+            console.log('Autoplay was prevented:', error);
+            // 如果自动播放被阻止，可以考虑引导用户进行交互
+        });
+    };
 
         // 幻灯片播放功能
         let slideIndex = 0;
