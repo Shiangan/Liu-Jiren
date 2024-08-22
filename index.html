@@ -18,7 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
     
-<audio id="background-music" autoplay loop>
+<audio id="background-music" autoplay loop hidden>
     <source src="珍珠港事件.mp3" type="audio/mpeg">
 </audio>
  
@@ -294,15 +294,14 @@
 
     <!-- JavaScript -->
     <script>
-    window.onload = function() {
+    document.addEventListener('DOMContentLoaded', function() {
         const audio = document.getElementById('background-music');
-        audio.play().then(() => {
-            // 播放成功后，取消静音
         audio.play().catch(error => {
             console.log('Autoplay was prevented:', error);
-            // 如果自动播放被阻止，可能需要提示用户点击页面进行播放
+            // 自动播放被阻止时，可能需要提示用户点击页面进行播放
         });
-
+    });
+</script>
 
         // 幻灯片播放功能
         let slideIndex = 0;
