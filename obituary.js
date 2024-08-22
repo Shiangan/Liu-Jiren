@@ -49,18 +49,6 @@
             });
         }
 
-        // 音乐自动播放
-        window.onload = function() {
-            const audio = document.getElementById('background-music');
-            if (audio) {
-                audio.play().then(() => {
-                    audio.muted = false;
-                }).catch(error => {
-                    console.log('Autoplay was prevented:', error);
-                });
-            }
-        };
-
         // 渐显文本效果
         const fadeInTexts = document.querySelectorAll('.fade-in-text');
         fadeInTexts.forEach((text, index) => {
